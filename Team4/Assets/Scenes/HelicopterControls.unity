@@ -352,6 +352,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23bfbe72751274444bcb3e31ecc80c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  MainCamera: {fileID: 0}
+  AmountOfParallax: 0
+  smoothingFactor: 3
 --- !u!1 &805427202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1619,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1442777257}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnDrop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ace0bb6b-aff9-46f1-ac33-a9bf99a8bc15
+    m_ActionName: 'Player/Drop[/Keyboard/s]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1636,6 +1655,8 @@ MonoBehaviour:
   hoverLift: 20
   horizontalSpeed: 10
   speedLimit: 20
+  bounceStrengthX: 40
+  manualDropForce: 30
 --- !u!1 &1737392515
 GameObject:
   m_ObjectHideFlags: 0

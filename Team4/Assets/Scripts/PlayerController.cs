@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
     public float horizontalSpeed = 2.0f;
     public float speedLimit = 20.0f;
     public float bounceStrengthX = 40.0f;
+    public float manualDropForce = 30.0f;
 
     Rigidbody2D rb;
     float movementAxis;
     bool bIsHovering = false;
+    bool bIsDropping = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour
             if (bIsHovering)
             {
                 rb.AddForceY(hoverLift);
+            } else if (bIsDropping) {
+                rb.AddForce(Vector2.down * manualDropForce, ForceMode2D.Force);
             }
 
             if(rb.linearVelocity.magnitude > speedLimit)
@@ -58,5 +62,10 @@ public class PlayerController : MonoBehaviour
     public void OnHover(InputAction.CallbackContext context)
     {
         bIsHovering = context.ReadValueAsButton();
+    }
+
+    public void OnDrop(InputAction.CallbackContext context)
+    {
+        bIsDropping = context.ReadValueAsButton();
     }
 }
