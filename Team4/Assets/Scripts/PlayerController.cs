@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public float hoverLift = 5.0f;
     public float horizontalSpeed = 2.0f;
+    public float speedLimit = 20.0f;
 
     Rigidbody2D rb;
     float movementAxis;
@@ -26,6 +27,11 @@ public class PlayerController : MonoBehaviour
             {
                 rb.AddForceY(hoverLift);
             }
+
+            if(rb.linearVelocity.magnitude > speedLimit)
+            {
+                rb.linearVelocity = rb.linearVelocity.normalized * speedLimit;
+            }
         }
     }
 
@@ -38,12 +44,10 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementAxis = context.ReadValue<float>();
-        print("Movement axis: " + movementAxis);
     }
 
     public void OnHover(InputAction.CallbackContext context)
     {
         bIsHovering = context.ReadValueAsButton();
-        print("Is Hovering: " + bIsHovering);
     }
 }
