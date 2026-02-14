@@ -8,15 +8,24 @@ public class PlayerController : MonoBehaviour
     public float speedLimit = 20.0f;
     public float bounceStrengthX = 40.0f;
     public float manualDropForce = 30.0f;
+    public float maxFlightTime = 3.0f;
+    public float flightTimeRecoveryRate = 0.5f;
+
+    [SerializeField]
+    private RectTransform flightMeter;
+    public float flightMeterWidth;
+    public float flightMeterHeight;
 
     Rigidbody2D rb;
     float movementAxis;
     bool bIsHovering = false;
     bool bIsDropping = false;
+    float flightTimeRemaining = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        flightTimeRemaining = maxFlightTime;
     }
 
     private void FixedUpdate()
@@ -26,10 +35,17 @@ public class PlayerController : MonoBehaviour
             //horizontal speed
             rb.AddForceX(horizontalSpeed * movementAxis);
             //lift/hover
-            if (bIsHovering)
+            if (bIsHovering && flightTimeRemaining > 0)
             {
                 rb.AddForceY(hoverLift);
-            } else if (bIsDropping) {
+
+                SetFlightTimeRemaining(flightTimeRemaining - Time.deltaTime);
+            } else
+            {
+                SetFlightTimeRemaining(Mathf.Min(maxFlightTime, flightTimeRemaining + (Time.deltaTime * flightTimeRecoveryRate)));
+            } 
+            
+            if (bIsDropping) {
                 rb.AddForce(Vector2.down * manualDropForce, ForceMode2D.Force);
             }
 
@@ -67,5 +83,12 @@ public class PlayerController : MonoBehaviour
     public void OnDrop(InputAction.CallbackContext context)
     {
         bIsDropping = context.ReadValueAsButton();
+    }
+
+    private void SetFlightTimeRemaining(float newFlightTime)
+    {
+        flightTimeRemaining = newFlightTime;
+        float newWidth = (newFlightTime / maxFlightTime) * flightMeterWidth;
+        flightMeter.sizeDelta = new Vector2(newWidth, flightMeterHeight);
     }
 }
