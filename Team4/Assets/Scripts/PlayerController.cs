@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public float hoverLift = 5.0f;
     public float horizontalSpeed = 2.0f;
     public float speedLimit = 20.0f;
+    public float bounceStrengthX = 40.0f;
 
     Rigidbody2D rb;
     float movementAxis;
@@ -39,6 +40,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        ContactPoint2D contact = collision.GetContact(0);
+        Vector2 normal = contact.normal;
+
+        rb.AddForceX(-1 * bounceStrengthX * Mathf.Abs(normal.x) * horizontalSpeed * movementAxis);
     }
 
     public void OnMove(InputAction.CallbackContext context)
