@@ -11,6 +11,7 @@ public class PointTrigger : MonoBehaviour
 
     public void OnTrigger()
     {
+        transform.parent.GetComponent<PointsTriggerParent>().IncrementPoints();
         collision.enabled = false;
     }
 }
