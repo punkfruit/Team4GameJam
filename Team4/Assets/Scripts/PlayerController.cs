@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float manualDropForce = 30.0f;
     public float maxFlightTime = 3.0f;
     public float flightTimeRecoveryRate = 0.5f;
+    public int points = 0;
 
     [SerializeField]
     private RectTransform flightMeter;
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
                 SetFlightTimeRemaining(Mathf.Min(maxFlightTime, flightTimeRemaining + (Time.deltaTime * flightTimeRecoveryRate)));
             } 
             
-            if (bIsDropping) {
+            if (bIsDropping && !bIsHovering) {
                 rb.AddForce(Vector2.down * manualDropForce, ForceMode2D.Force);
             }
 
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
         } else if (collision.gameObject.CompareTag("PointTrigger"))
         {
             points += 10;
+            collision.gameObject.GetComponent<PointTrigger>().OnTrigger();
         }
     }
 
