@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   MainCamera: {fileID: 1089476058}
   AmountOfParallax: 0
+  smoothingFactor: 10
 --- !u!1 &497354350
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   MainCamera: {fileID: 1089476058}
   AmountOfParallax: 0.5
+  smoothingFactor: 10
 --- !u!1 &705687496
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +755,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 2
+  UpdateMethod: 1
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
@@ -874,6 +876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   MainCamera: {fileID: 1089476058}
   AmountOfParallax: 0.3
+  smoothingFactor: 10
 --- !u!1 &1257118544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1774,6 +1777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   MainCamera: {fileID: 1089476058}
   AmountOfParallax: 1
+  smoothingFactor: 10
 --- !u!1 &1779231385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +1884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   MainCamera: {fileID: 1089476058}
   AmountOfParallax: 0.3
+  smoothingFactor: 10
 --- !u!1 &1784411763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,6 +1991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxEffect
   MainCamera: {fileID: 1089476058}
   AmountOfParallax: 0.8
+  smoothingFactor: 10
 --- !u!1 &2105693928
 GameObject:
   m_ObjectHideFlags: 0
