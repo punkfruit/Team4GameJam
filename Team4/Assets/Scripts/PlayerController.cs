@@ -64,10 +64,16 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        ContactPoint2D contact = collision.GetContact(0);
-        Vector2 normal = contact.normal;
+        if (collision.gameObject.CompareTag("Platforms"))
+        {
+            ContactPoint2D contact = collision.GetContact(0);
+            Vector2 normal = contact.normal;
 
-        rb.AddForceX(-1 * bounceStrengthX * Mathf.Abs(normal.x) * horizontalSpeed * movementAxis);
+            rb.AddForceX(-1 * bounceStrengthX * Mathf.Abs(normal.x) * horizontalSpeed * movementAxis);
+        } else if (collision.gameObject.CompareTag("PointTrigger"))
+        {
+            points += 10;
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)

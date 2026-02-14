@@ -435,7 +435,19 @@ MonoBehaviour:
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4231345038932221607}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnDrop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ace0bb6b-aff9-46f1-ac33-a9bf99a8bc15
     m_ActionName: 'Player/Drop[/Keyboard/s]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -462,6 +474,7 @@ MonoBehaviour:
   manualDropForce: 30
   maxFlightTime: 3
   flightTimeRecoveryRate: 0.5
+  points: 0
   flightMeter: {fileID: 2559622574001349585}
   flightMeterWidth: 100
   flightMeterHeight: 16
