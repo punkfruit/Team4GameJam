@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
