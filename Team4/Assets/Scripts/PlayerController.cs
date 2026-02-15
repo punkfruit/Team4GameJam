@@ -3,6 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private PlayerInput playerInput;
+    private InputAction _layEggAction;
+    private EggLayingArea currentEggLayingArea;
+
     public float hoverLift = 5.0f;
     public float horizontalSpeed = 2.0f;
     public float speedLimit = 20.0f;
@@ -22,6 +26,13 @@ public class PlayerController : MonoBehaviour
     bool bIsDropping = false;
     float flightTimeRemaining = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        _layEggAction = playerInput.actions["LayEgg"];
+        _layEggAction?.Disable();//The ? is a null conditional operator, it checks if _layEggAction is not null before calling Disable() to avoid a NullReferenceException if the action is not found.
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -73,6 +84,34 @@ public class PlayerController : MonoBehaviour
         } else if (collision.gameObject.CompareTag("PointTrigger"))
         {
             collision.gameObject.GetComponent<PointTrigger>().OnTrigger();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("EggTriggerZone"))
+        {
+            _layEggAction?.Enable();
+            //Show UI prompt to indicate the player can lay an egg
+            currentEggLayingArea = collision.GetComponent<EggLayingArea>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("EggTriggerZone"))
+        {
+            _layEggAction?.Disable();
+            //Hide UI prompt to indicate the player can no longer lay an egg
+            currentEggLayingArea = null;
+        }
+    }
+
+    public void OnLayEgg(InputAction.CallbackContext context)
+    {
+        if (currentEggLayingArea != null)
+        {
+            currentEggLayingArea.isBeingFilled = context.ReadValueAsButton();
         }
     }
 

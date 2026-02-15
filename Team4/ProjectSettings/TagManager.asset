@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platforms
   - PointTrigger
+  - EggTriggerZone
   layers:
   - Default
   - TransparentFX
