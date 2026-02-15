@@ -61,7 +61,7 @@ public class EggLayingArea : MonoBehaviour
     private void SpawnEgg()
     {
         //Plant Egg and deactivate the spawner
-        GameDirector.Instance.EggLayed();
+        GameDirector.Instance.EggLaid();
         hasLaidEgg = true;
         spriteRenderer.sprite = eggIcon;
     }
