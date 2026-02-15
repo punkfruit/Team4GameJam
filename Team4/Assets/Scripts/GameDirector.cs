@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class is a singleton that handles the finer details of the game,
@@ -21,7 +22,7 @@ public class GameDirector : MonoBehaviour
 
     [SerializeField]
     private float timeLimit = 300f; // Time limit for the game in seconds
-    
+
     private bool isRunning = false;
     private int eggCount = 0;
     void Awake()
@@ -34,7 +35,6 @@ public class GameDirector : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -72,5 +72,25 @@ public class GameDirector : MonoBehaviour
     {
         print("Goal reached!");
         OnGoalReached.Invoke();
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
