@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,10 +9,17 @@ using UnityEngine.Events;
 public class GameDirector : MonoBehaviour
 {
     public static GameDirector Instance { get; private set; } // Singleton instance
-
-    private int eggCount = 0;
+    
+    [HideInInspector]
+    public float currentTime = 0f;
     public UnityEvent OnEggLayed; // Event triggered when an egg is laid
+    public UnityEvent OnTimeLimitReached; // Event triggered when the time limit is reached
 
+    [SerializeField]
+    private float timeLimit = 300f; // Time limit for the game in seconds
+    
+    private bool isRunning = false;
+    private int eggCount = 0;
     void Awake()
     {
         // Ensure that there is only one instance of GameDirector
@@ -26,8 +34,33 @@ public class GameDirector : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StartTimer();
+    }
+
+    private void Update()
+    {
+        if (isRunning)
+        {
+            currentTime -= Time.deltaTime;
+            if (currentTime <= 0.0f)
+            {
+                isRunning = false;
+                OnTimeLimitReached.Invoke();
+            }
+        }
+    }
+
+    private void StartTimer()
+    {
+        isRunning = true;
+        currentTime = timeLimit;
+    }
+
     public void EggLayed()
     {
+        print("Egg laid! Total eggs: " + (eggCount + 1));
         OnEggLayed.Invoke();
         eggCount++;
     }
