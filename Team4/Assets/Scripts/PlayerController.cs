@@ -92,8 +92,12 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("EggTriggerZone"))
         {
             _layEggAction?.Enable();
-            //Show UI prompt to indicate the player can lay an egg
+            //TODO: Show UI prompt to indicate the player can lay an egg
             currentEggLayingArea = collision.GetComponent<EggLayingArea>();
+        }
+        if (collision.CompareTag("Goal"))
+        {
+            GameDirector.Instance.GoalReached();
         }
     }
 

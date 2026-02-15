@@ -12,8 +12,12 @@ public class GameDirector : MonoBehaviour
     
     [HideInInspector]
     public float currentTime = 0f;
-    public UnityEvent OnEggLayed; // Event triggered when an egg is laid
-    public UnityEvent OnTimeLimitReached; // Event triggered when the time limit is reached
+    [SerializeField]
+    UnityEvent OnEggLayed; // Event triggered when an egg is laid
+    [SerializeField]
+    UnityEvent OnTimeLimitReached; // Event triggered when the time limit is reached
+    [SerializeField]
+    UnityEvent OnGoalReached;
 
     [SerializeField]
     private float timeLimit = 300f; // Time limit for the game in seconds
@@ -60,8 +64,13 @@ public class GameDirector : MonoBehaviour
 
     public void EggLayed()
     {
-        print("Egg laid! Total eggs: " + (eggCount + 1));
         OnEggLayed.Invoke();
         eggCount++;
+    }
+
+    public void GoalReached()
+    {
+        print("Goal reached!");
+        OnGoalReached.Invoke();
     }
 }
