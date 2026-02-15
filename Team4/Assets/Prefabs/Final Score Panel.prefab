@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5971596440507469888}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameDirector, Assembly-CSharp
+        m_MethodName: ResetGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &784104429637509944
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +145,7 @@ GameObject:
   - component: {fileID: 6351084817789922977}
   - component: {fileID: 7258653797133975658}
   - component: {fileID: 7061359749610511487}
+  - component: {fileID: 1573504347504867246}
   m_Layer: 5
   m_Name: Final Score Panel
   m_TagString: Untagged
@@ -223,6 +236,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1573504347504867246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784104429637509944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09704614f55798488f8f0b98f5adf00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  finalScoreText: {fileID: 4376205977035751276}
+  eggsLaidText: {fileID: 2451598843608956421}
+  timeRemainingText: {fileID: 2342560556559752775}
 --- !u!1 &1742417080659327495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,7 +1897,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6765699056421698693}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameDirector, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8692330378119921576
 GameObject:
   m_ObjectHideFlags: 0

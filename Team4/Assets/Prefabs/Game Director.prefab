@@ -44,3 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acae9df752bf7248a4cdf1406b66268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameDirector
+  currentTime: 0
+  OnEggLayed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTimeLimitReached:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGoalReached:
+    m_PersistentCalls:
+      m_Calls: []
+  gameSettings: {fileID: 11400000, guid: 315c63bb0bd73334489ead6ff53347b9, type: 2}
+  timeLimit: 300

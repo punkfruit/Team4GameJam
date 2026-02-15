@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   fillAmount: 0
-  fillRate: 0.3
+  fillRate: 0.75
   maxFillAmount: 1
   fillDecayRate: 0.05
   fillBar: {fileID: 7037671390763996777}

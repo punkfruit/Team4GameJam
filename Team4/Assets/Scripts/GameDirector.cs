@@ -10,7 +10,9 @@ using UnityEngine.SceneManagement;
 public class GameDirector : MonoBehaviour
 {
     public static GameDirector Instance { get; private set; } // Singleton instance
-    
+    public int EggCount { get => eggCount; private set => eggCount = value; }
+    public int Score { get => score; private set => score = value; }
+
     [HideInInspector]
     public float currentTime = 0f;
     [SerializeField]
@@ -19,12 +21,14 @@ public class GameDirector : MonoBehaviour
     UnityEvent OnTimeLimitReached; // Event triggered when the time limit is reached
     [SerializeField]
     UnityEvent OnGoalReached;
-
     [SerializeField]
-    private float timeLimit = 300f; // Time limit for the game in seconds
+    GameSettingsSO gameSettings;
+
+    private float timeLimit = 60f; // Time limit for the game in seconds
 
     private bool isRunning = false;
     private int eggCount = 0;
+    private int score = 0;
     void Awake()
     {
         // Ensure that there is only one instance of GameDirector
@@ -36,6 +40,7 @@ public class GameDirector : MonoBehaviour
         {
             Instance = this;
         }
+        timeLimit = gameSettings.timeLimit;
     }
 
     private void Start()
@@ -65,13 +70,22 @@ public class GameDirector : MonoBehaviour
     public void EggLayed()
     {
         OnEggLayed.Invoke();
-        eggCount++;
+        EggCount++;
     }
 
     public void GoalReached()
     {
         print("Goal reached!");
+        isRunning = false;
+        CalculateScore();
         OnGoalReached.Invoke();
+    }
+
+    private void CalculateScore()
+    {
+        int timeBonus = Mathf.RoundToInt(currentTime * gameSettings.timeMultiplier);
+        int eggBonus = Mathf.RoundToInt(EggCount * gameSettings.eggMultiplier);
+        Score = timeBonus + eggBonus;
     }
 
     public void ResetGame()
