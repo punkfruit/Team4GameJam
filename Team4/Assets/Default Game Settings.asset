@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f04df37902f6593499d15f0d69b5c034, type: 3}
-  m_Name: GameSettingsData
+  m_Name: Default Game Settings
   m_EditorClassIdentifier: Assembly-CSharp::GameSettingsSO
   timeLimit: 300
   eggMultiplier: 1.2
