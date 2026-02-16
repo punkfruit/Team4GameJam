@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1240066401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710346275968555455, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
+  m_PrefabInstance: {fileID: 3031315638146587790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1434825659
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +366,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 60379785776131280, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 60379785776131280, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 60379785776131280, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 60379785776131280, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1538836522}
@@ -365,6 +388,18 @@ PrefabInstance:
     - target: {fileID: 60379785776131280, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MainMenuCanvas, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 710346275968555455, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.6698113
+      objectReference: {fileID: 0}
+    - target: {fileID: 710346275968555455, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.6698113
+      objectReference: {fileID: 0}
+    - target: {fileID: 710346275968555455, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.6698113
       objectReference: {fileID: 0}
     - target: {fileID: 710346275968555455, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -466,6 +501,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7193261445635408444, guid: ec5b1029e43cc774c9c7af4591b67883, type: 3}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 1240066401}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
