@@ -4,7 +4,7 @@ public class BoilingWaterSpawnScript : MonoBehaviour
 {
     
     public GameObject boilingWater;
-    public float spawnRate = 5;
+    public float spawnRate = 5;//Rate between spawns in seconds
     private float timer = 0;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,9 +22,8 @@ public class BoilingWaterSpawnScript : MonoBehaviour
         }
         else
         {
-            Instantiate(boilingWater, transform.position, transform.rotation);
+            Instantiate(boilingWater, transform.position, transform.rotation, this.transform);
             timer = 0;
         }
-        
     }
 }
