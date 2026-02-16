@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 959e9ba7f5a5f3d45ad85f2f4e841a3d
+guid: 07c378136c8bbde40b9ffde9cce1db8b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6389427185739496862
-    second: water16x16_0
+      213: -3740210844159686219
+    second: IMG_0574_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water16x16_0
+      name: IMG_0574_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 61
+        y: 3
+        width: 60
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9df93c3c2ecba850800000000000000
-      internalID: 6389427185739496862
+      spriteID: 5b94cc0cd0a181cc0800000000000000
+      internalID: -3740210844159686219
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      water16x16_0: 6389427185739496862
+      IMG_0574_0: -3740210844159686219
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
