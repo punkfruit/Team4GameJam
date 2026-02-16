@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988049839418085856, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1925666449}
     - target: {fileID: 3021218213148537995, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -433,6 +437,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988049839418085856, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1925666449}
     - target: {fileID: 3021218213148537995, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -652,6 +660,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988049839418085856, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1925666449}
     - target: {fileID: 3021218213148537995, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -742,6 +754,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988049839418085856, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1925666449}
     - target: {fileID: 3021218213148537995, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5628,6 +5644,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988049839418085856, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1925666449}
     - target: {fileID: 3021218213148537995, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5950,6 +5970,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2714062319592152002, guid: 9a3c7ac7c4a0d0346b0d2fd869239267, type: 3}
   m_PrefabInstance: {fileID: 119178569}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1925666449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2523274029784285679, guid: 9a3c7ac7c4a0d0346b0d2fd869239267, type: 3}
+  m_PrefabInstance: {fileID: 119178569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
 --- !u!1001 &1934035771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6006,6 +6037,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988049839418085856, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1925666449}
     - target: {fileID: 3021218213148537995, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6801,6 +6836,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1988049839418085856, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1925666449}
     - target: {fileID: 3021218213148537995, guid: a7487df7dd711984182c5a22ccc7fa1b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

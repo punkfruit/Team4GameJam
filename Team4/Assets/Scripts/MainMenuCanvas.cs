@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,5 +20,16 @@ public class MainMenuCanvas : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    void Update()
+    {
+        if (Gamepad.current != null && Gamepad.current.wasUpdatedThisFrame)
+        {
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                startButton.Select();
+            }
+        }
     }
 }
