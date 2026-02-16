@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class FinalScorePanel : MonoBehaviour
@@ -25,6 +27,21 @@ public class FinalScorePanel : MonoBehaviour
         finalScoreText.text = GameDirector.Instance.Score.ToString();
 
         ReplayButton.Select();
+    }
+
+    void Update()
+    {
+        if (Gamepad.current != null && Gamepad.current.wasUpdatedThisFrame)
+        {
+            if(enabled)
+            {
+                if (EventSystem.current.currentSelectedGameObject == null)
+                {
+                    ReplayButton.Select();
+                }
+            }
+            
+        }
     }
 
 }
