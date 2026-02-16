@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float manualDropForce = 30.0f;
     public float maxFlightTime = 3.0f;
     public float flightTimeRecoveryRate = 0.5f;
+    public float landedFlightTimeRecoveryMultiplier = 4.0f;
 
     [HideInInspector]
     public bool isControlActive = true;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     float movementAxis;
     bool bIsHovering = false;
     bool bIsDropping = false;
+    bool landedOnPlatform = false;
     float flightTimeRemaining = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -56,7 +58,8 @@ public class PlayerController : MonoBehaviour
                 SetFlightTimeRemaining(flightTimeRemaining - Time.deltaTime);
             } else
             {
-                SetFlightTimeRemaining(Mathf.Min(maxFlightTime, flightTimeRemaining + (Time.deltaTime * flightTimeRecoveryRate)));
+                float multiplier = landedOnPlatform ? landedFlightTimeRecoveryMultiplier : 1;
+                SetFlightTimeRemaining(Mathf.Min(maxFlightTime, flightTimeRemaining + (Time.deltaTime * flightTimeRecoveryRate * multiplier)));
             } 
             
             if (bIsDropping && !bIsHovering) {
@@ -84,9 +87,21 @@ public class PlayerController : MonoBehaviour
             Vector2 normal = contact.normal;
 
             rb.AddForceX(-1 * bounceStrengthX * Mathf.Abs(normal.x) * horizontalSpeed * movementAxis);
+            if (normal.y > 0)
+            {
+                landedOnPlatform = true;
+            }
         } else if (collision.gameObject.CompareTag("PointTrigger"))
         {
             collision.gameObject.GetComponent<PointTrigger>().OnTrigger();
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platforms"))
+        {
+            landedOnPlatform = false;
         }
     }
 
