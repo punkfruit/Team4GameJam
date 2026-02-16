@@ -28,6 +28,10 @@ public class EggLayingArea : MonoBehaviour
 
     void Start()
     {
+        if (playerInput == null)
+            playerInput = GameObject.FindGameObjectWithTag("Player")
+                        .GetComponent<PlayerInput>();//get player input component for the controller glyphs to work
+
         fillBar.gameObject.SetActive(false);
 
         if (promptIconImage != null)
