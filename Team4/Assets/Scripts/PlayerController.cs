@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public float maxFlightTime = 3.0f;
     public float flightTimeRecoveryRate = 0.5f;
 
+    [HideInInspector]
+    public bool isControlActive = true;
+
     [SerializeField]
     private RectTransform flightMeter;
     public float flightMeterWidth;

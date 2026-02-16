@@ -56,6 +56,8 @@ public class GameDirector : MonoBehaviour
             if (currentTime <= 0.0f)
             {
                 isRunning = false;
+                currentTime = 0.0f;
+                CalculateScore();
                 OnTimeLimitReached.Invoke();
             }
         }

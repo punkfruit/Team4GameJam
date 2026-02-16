@@ -23,6 +23,7 @@ public class BoilingWaterSpawnScript : MonoBehaviour
             tempTimer -= Time.deltaTime;
             return;
         }
+
         if (timer < spawnRate)
         {
             timer += Time.deltaTime;
