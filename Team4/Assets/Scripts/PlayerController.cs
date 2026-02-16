@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public float flightMeterHeight;
 
     Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
     float movementAxis;
     bool bIsHovering = false;
     bool bIsDropping = false;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         flightTimeRemaining = maxFlightTime;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -90,6 +92,7 @@ public class PlayerController : MonoBehaviour
             if (normal.y > 0)
             {
                 landedOnPlatform = true;
+                transform.eulerAngles = new Vector3(0f, 0f, 0f);
             }
         } else if (collision.gameObject.CompareTag("PointTrigger"))
         {
@@ -140,6 +143,17 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementAxis = context.ReadValue<float>();
+        if (bIsDropping)
+        {
+            return;
+        }
+        if (movementAxis > 0)
+        {
+            spriteRenderer.flipX = true;
+        } else if (movementAxis < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     public void OnHover(InputAction.CallbackContext context)
@@ -149,7 +163,20 @@ public class PlayerController : MonoBehaviour
 
     public void OnDrop(InputAction.CallbackContext context)
     {
+        if (bIsHovering)
+        {
+            bIsDropping = false;
+            return;
+        }
         bIsDropping = context.ReadValueAsButton();
+        if (bIsDropping && !landedOnPlatform)
+        {
+            float angle = spriteRenderer.flipX ? 270f : 90f;
+            transform.eulerAngles = new Vector3(0f, 0f, angle);
+        } else
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+        }
     }
 
     private void SetFlightTimeRemaining(float newFlightTime)
