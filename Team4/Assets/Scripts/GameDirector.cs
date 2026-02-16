@@ -86,8 +86,9 @@ public class GameDirector : MonoBehaviour
     private void CalculateScore()
     {
         int timeBonus = Mathf.RoundToInt(currentTime * gameSettings.timeMultiplier);
+        int finishBonus = currentTime > 0 ? gameSettings.fixedFinishBonus : 0;
         int eggBonus = Mathf.RoundToInt(EggCount * gameSettings.eggMultiplier);
-        Score = timeBonus + eggBonus;
+        Score = timeBonus + finishBonus + eggBonus;
     }
 
     public void ResetGame()

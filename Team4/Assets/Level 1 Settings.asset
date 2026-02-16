@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Level 1 Settings
   m_EditorClassIdentifier: Assembly-CSharp::GameSettingsSO
   timeLimit: 90
-  eggMultiplier: 1.2
-  timeMultiplier: 1.1
+  eggMultiplier: 10
+  timeMultiplier: 0.25
+  fixedFinishBonus: 30
